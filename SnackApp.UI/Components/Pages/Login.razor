@@ -1,0 +1,36 @@
+@page "/login"
+@layout LoginLayout
+@inject NavigationManager Navigation
+@inject CustomAuthenticationService AuthService
+@using System.ComponentModel.DataAnnotations
+@using System.Security.Claims
+
+<RadzenStack Gap="0" class="rz-my-12 rz-mx-auto rz-border-radius-6 rz-shadow-10" Style="width: 100%; max-width: 400px; overflow: hidden;">
+    <RadzenCard class="rz-shadow-0 rz-border-radius-0 rz-background-color-info rz-p-12" style="text-align: center;">
+        <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" class="rz-color-white rz-mb-0">SnackApp</RadzenText>
+    </RadzenCard>
+    <RadzenCard class="rz-shadow-0 rz-p-12">
+        <RadzenTemplateForm Data=@(userIdentifier) Submit="@(async (string args) => await HandleLogin())">
+            <RadzenLogin AllowRegister="true" AllowResetPassword="true" />
+        </RadzenTemplateForm>
+    </RadzenCard>
+</RadzenStack>
+
+@code {
+    public string userIdentifier = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        var currentUser = AuthService.CurrentUser;
+
+        var identity = new ClaimsIdentity(
+            [
+                new Claim(ClaimTypes.Name, userIdentifier),
+            ],
+            "Custom Authentication");
+
+        var newUser = new ClaimsPrincipal(identity);
+
+        AuthService.CurrentUser = newUser;
+    }
+}
