@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnackApp.UI", "SnackApp.UI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnackApp.API", "SnackApp.API\SnackApp.API.csproj", "{F604F4CE-F7CF-4298-A4BA-1BF6C9174EAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnackApp.Tests", "SnackApp.Tests\SnackApp.Tests.csproj", "{9B39D0B1-05E1-4ED9-8C3E-53216B388D62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{F604F4CE-F7CF-4298-A4BA-1BF6C9174EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F604F4CE-F7CF-4298-A4BA-1BF6C9174EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F604F4CE-F7CF-4298-A4BA-1BF6C9174EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B39D0B1-05E1-4ED9-8C3E-53216B388D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B39D0B1-05E1-4ED9-8C3E-53216B388D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B39D0B1-05E1-4ED9-8C3E-53216B388D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B39D0B1-05E1-4ED9-8C3E-53216B388D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,24 @@
-@SnackApp.API_HostAddress = http://localhost:5207
+@base_url = http://localhost:5207
 
-GET {{SnackApp.API_HostAddress}}/weatherforecast/
+### Register a new user
+POST {{base_url}}/register
+Content-Type: application/json
 Accept: application/json
 
+{
+    "Username": "testuser",
+    "Password": "testpassword",
+    "Role": "User"
+}
+
 ###
+
+### Login with the registered user
+POST {{base_url}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Username": "testuser",
+    "Password": "testpassword"
+}
